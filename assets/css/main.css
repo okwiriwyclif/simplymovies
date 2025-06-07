@@ -1,0 +1,306 @@
+/* --- 1. Global Styles --- */
+
+/* Body: Base for dark mode */
+body {
+  background-color: #0d0d0d; /* Very dark background */
+  color: #f5f5f5; /* Light off-white text */
+  /* Clean, modern font */
+
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue",
+    "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 18px; /* Comfortable base font size */
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased; /* Better text rendering */
+  -moz-osx-font-smoothing: grayscale; /* Better text rendering */
+}
+
+/* Headings: Light text on dark background, responsive sizing */
+h1 {
+  color: #ffffff; /* Pure white for strong contrast */
+  font-size: 3.2em; /* Large heading */
+  line-height: 1.2em;
+  margin-bottom: 0.6em;
+  font-weight: 700; /* Bold */
+}
+
+h2 {
+  color: #ffffff;
+  font-size: 2.5em;
+  line-height: 1.3em;
+  margin-bottom: 0.5em;
+  font-weight: 700;
+}
+
+h3 {
+  color: #ffffff;
+  font-size: 1.8em;
+  line-height: 1.4em;
+  margin-bottom: 0.4em;
+  font-weight: 600; /* Semi-bold */
+}
+
+h4 {
+  color: #ffffff;
+  font-size: 1.4em;
+  line-height: 1.5em;
+  margin-bottom: 0.3em;
+  font-weight: 600;
+}
+
+h5 {
+  color: #ffffff;
+  font-size: 1.1em;
+  line-height: 1.6em;
+  margin-bottom: 0.2em;
+  font-weight: 600;
+}
+
+h6 {
+  color: #ffffff;
+  font-size: 0.9em;
+  line-height: 1.7em;
+  margin-bottom: 0.1em;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  opacity: 0.8;
+}
+
+/* Links: Accent color with subtle hover */
+a {
+  color: #8cc0de; /* Muted blue accent */
+  text-decoration: none;
+  transition: color 0.2s ease, text-decoration 0.2s ease;
+}
+
+a:hover {
+  color: #a9d9f0; /* Slightly brighter on hover */
+  text-decoration: underline;
+}
+
+/* Paragraphs: Ensures basic text styling */
+p {
+  margin-bottom: 1em;
+  color: #e0e0e0; /* Slightly darker than body text for subtle hierarchy */
+}
+
+/* --- 2. Layout & Structure Classes --- */
+
+/* Max Width Wrapper: Constrains content width and centers it */
+.max-width-wrapper {
+  width: 100%;
+  max-width: 1280px; /* Your desired maximum content width */
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px; /* Inner padding to prevent content from touching edges */
+  padding-right: 20px;
+}
+
+/* Small Screen Only: Visible on tablet and mobile, hidden on desktop */
+.small-screen-only {
+  display: none; /* Hidden by default on desktop */
+}
+
+@media screen and (max-width: 991px) {
+  /* Tablet breakpoint and below */
+  .small-screen-only {
+    display: block; /* Visible on tablet and mobile */
+  }
+}
+
+/* Large Screen Only: Visible on desktop, hidden on tablet and mobile */
+.large-screen-only {
+  display: block; /* Visible by default on desktop */
+}
+
+@media screen and (max-width: 991px) {
+  /* Tablet breakpoint and below */
+  .large-screen-only {
+    display: none; /* Hidden on tablet and mobile */
+  }
+}
+
+/* --- 3. Responsive Header --- */
+
+.header {
+  position: sticky; /* Or 'fixed' */
+  top: 0;
+  z-index: 1000; /* Ensure header is above other content */
+
+  padding: 15px 0;
+  /* box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);  */
+  display: flex; /* Using flexbox for internal layout */
+  align-items: center;
+  justify-content: space-between; /* Spacing for logo and nav */
+}
+
+/* Nav Link Styling (if using a custom class on your nav links) */
+.nav-link {
+  color: #f5f5f5;
+  font-size: 1.05em;
+  font-weight: 500;
+  margin-left: 25px; /* Spacing between nav items */
+  transition: color 0.2s ease;
+}
+
+.nav-link:hover {
+  color: #8cc0de; /* Accent color on hover */
+}
+
+/* Styling for Webflow's default nav menu button (hamburger icon) */
+.w-nav-button {
+  color: #f5f5f5; /* Color of the hamburger icon */
+  background-color: transparent;
+  border: none;
+  padding: 10px;
+}
+
+/* --- 4. Standard Buttons --- */
+
+/* Base Button Style */
+.button {
+  display: inline-block;
+  padding: 12px 25px; /* Base padding, overridden by size classes */
+  border-radius: 8px; /* Slightly rounded corners */
+  font-family: "Inter", sans-serif;
+  font-size: 16px; /* Base font size, overridden by size classes */
+  font-weight: 600; /* Semi-bold */
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease,
+    border-color 0.2s ease, box-shadow 0.2s ease;
+  border: 1px solid transparent; /* Base border */
+}
+
+/* Primary Button */
+.button.is-primary,
+.primary-button {
+  background-color: #6b90b2; /* Muted blue primary color */
+  color: #ffffff; /* White text for contrast */
+  border-color: #6b90b2;
+}
+
+.primary-button:hover {
+  background-color: #597b9c; /* Slightly darker blue on hover */
+  border-color: #597b9c;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Subtle shadow on hover */
+}
+
+/* Secondary Button */
+.secondary-button {
+  background-color: transparent;
+  color: #8cc0de; /* Accent color text */
+  border-color: #8cc0de; /* Accent color border */
+}
+
+.secondary-button:hover {
+  background-color: rgba(
+    136,
+    192,
+    222,
+    0.1
+  ); /* Very subtle background tint on hover */
+  color: #a9d9f0; /* Slightly brighter text */
+  border-color: #a9d9f0;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Button Size Classes (Combo Classes) */
+.small-button {
+  padding: 8px 18px;
+  font-size: 14px;
+}
+
+.medium-button {
+  padding: 12px 25px; /* Matches base .button padding */
+  font-size: 16px; /* Matches base .button font size */
+}
+
+.large-button {
+  padding: 16px 35px;
+  font-size: 18px;
+}
+
+/* Card/Section Blocks: Slightly lighter dark background for distinct sections */
+.card,
+.section-block {
+  background-color: #1a1a1a; /* Slightly lighter dark gray than body */
+  border-radius: 12px;
+  padding: 40px;
+  margin-bottom: 30px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3); /* More pronounced shadow */
+}
+
+/* Form Elements: Inputs, Textareas, Selects */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+textarea,
+select {
+  width: 100%;
+  padding: 14px 18px;
+  background-color: #2a2a2a; /* Darker input background */
+  border: 1px solid #444444; /* Subtle dark gray border */
+  border-radius: 8px;
+  color: #f5f5f5; /* Light text color */
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  outline: none; /* Remove default focus outline */
+}
+
+/* Focus State for Form Elements */
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="number"]:focus,
+textarea:focus,
+select:focus {
+  border-color: #8cc0de; /* Accent color border on focus */
+  box-shadow: 0 0 0 3px rgba(136, 192, 222, 0.3); /* Soft accent glow */
+}
+
+/* Placeholder Text Styling */
+::-webkit-input-placeholder {
+  /* Chrome, Opera, Safari */
+  color: #999999;
+  opacity: 1; /* Override default opacity */
+}
+::-moz-placeholder {
+  /* Firefox 19+ */
+  color: #999999;
+  opacity: 1;
+}
+:-ms-input-placeholder {
+  /* IE 10+ */
+  color: #999999;
+}
+:-moz-placeholder {
+  /* Firefox 18- */
+  color: #999999;
+  opacity: 1;
+}
+
+/* Optional: Custom Scrollbar Styling (Webkit browsers like Chrome/Edge) */
+::-webkit-scrollbar {
+  width: 10px; /* Width of the scrollbar */
+}
+
+::-webkit-scrollbar-track {
+  background: #1a1a1a; /* Color of the scrollbar track */
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #555555; /* Color of the scrollbar thumb */
+  border-radius: 10px;
+  border: 2px solid #1a1a1a; /* Adds a bit of padding around the thumb */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #777777; /* Color on hover */
+}
