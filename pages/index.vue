@@ -3,6 +3,10 @@
     <div>
       <HeroSection />
     </div>
+
+    <div>
+      <SearchMovies />
+    </div>
     <div>
       <MoviesList title="Latest Movies" />
     </div>
@@ -12,11 +16,13 @@
 <script>
   import HeroSection from "~/components/landing/heroSection.vue";
   import MoviesList from "~/components/movies/moviesList.vue";
+  import SearchMovies from "~/components/movies/searchMovies.vue";
 
   export default {
     components: {
       MoviesList,
       HeroSection,
+      SearchMovies,
     },
     methods: {
       // This is a placeholder for any methods you might want to add

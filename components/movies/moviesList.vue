@@ -1,5 +1,5 @@
 <template>
-  <div class="movies-list py-16">
+  <div class="movies-list py-4">
     <div class="max-width-wrapper">
       <div class="header flex justify-between">
         <div>
